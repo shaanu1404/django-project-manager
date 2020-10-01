@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mx-auto">
+    <h1 class="text-2xl font-bold capitalize">
+        {{ project.title }}
+        <a href="#" class="rounded-full py-1 px-3 text-xs bg-white text-gray-900 capitalize shadow-lg">
+            {{ project.get_category_display }}
+        </a>
+    </h1>
+    <p class="my-3 text-gray-700">{{ project.description }}</p>
+    <div class="mt-4">
+        <h4 class="text-lg capitalize inline-block">Team</h4>
+        {% for member in team_members %}
+        <a href="{% url 'accounts:user_details' member.id %}"
+            class="rounded-full mx-2 py-1 px-3 text-sm bg-white text-gray-900 {% if member.user == project.team_alloted.team_lead.user %} bg-blue-700 text-white {% endif %} capitalize shadow-lg">
+            {{ member.user.get_full_name }}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

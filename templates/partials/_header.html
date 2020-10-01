@@ -1,0 +1,33 @@
+<header class="py-3 py-5">
+    <nav class="container mx-auto grid grid-cols-12">
+        <a href="/" class="text-2xl text-blue-800 font-bold col-span-3">
+            <i class="fas fa-igloo"></i> Igloo
+        </a>
+        <ul class="flex justify-end items-center col-span-9">
+            <li>
+                <a href="{% url 'home' %}"
+                    class="py-2 px-4 ml-3 uppercase text-sm font-bold tracking-widest text-gray-800 hover:text-blue-500 transition-color duration-300">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'projects:list' %}"
+                    class="py-2 px-4 ml-3 uppercase text-sm font-bold tracking-widest text-gray-800 hover:text-blue-500 transition-color duration-300">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'accounts:all_users' %}"
+                    class="py-2 px-4 ml-3 uppercase text-sm font-bold tracking-widest text-gray-800 hover:text-blue-500 transition-color duration-300">
+                    Employees
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'accounts:login' %}"
+                    class="py-3 px-5 rounded bg-blue-700 text-white text-sm tracking-widest font-bold uppercase ml-3 transition-shadow duration-300 hover:shadow-lg">
+                    Login&nbsp;&nbsp;&nbsp;<i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
